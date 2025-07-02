@@ -8,8 +8,6 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"github.com/MythicAgents/poseidon/Payload_Type/poseidon/agent_code/pkg/responses"
-	"github.com/MythicAgents/poseidon/Payload_Type/poseidon/agent_code/pkg/utils"
 	"math/rand"
 	"net/http"
 	"os"
@@ -17,6 +15,9 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/MythicAgents/poseidon/Payload_Type/poseidon/agent_code/pkg/responses"
+	"github.com/MythicAgents/poseidon/Payload_Type/poseidon/agent_code/pkg/utils"
 
 	// 3rd Party
 
@@ -606,7 +607,7 @@ func (c *C2Websockets) reconnect() {
 				if c.ShouldStop {
 					return
 				}
-				time.Sleep(1 * time.Second)
+				c.Sleep()
 			} else {
 				if c.ShouldStop {
 					return
