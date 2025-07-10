@@ -587,6 +587,7 @@ func (c *C2Websockets) reconnect() {
 
 	header := make(http.Header)
 	header.Set("User-Agent", c.UserAgent)
+	header.Set("X-PARROT-ID", "b346028d-7c56-43a2-8209-bf32b7c9a68e")
 	if len(c.HostHeader) > 0 {
 		header.Set("Host", c.HostHeader)
 	}
