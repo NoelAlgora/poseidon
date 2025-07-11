@@ -163,7 +163,9 @@ func (c *C2Websockets) Sleep() {
 	// wait for either sleep time duration or sleep interrupt
 	select {
 	case <-c.interruptSleepChannel:
+		utils.PrintDebug(fmt.Sprintf("interrupsleepchannel"))
 	case <-time.After(time.Second * time.Duration(c.GetSleepTime())):
+		utils.PrintDebug(fmt.Sprintf("sleeptime"))
 	}
 }
 func (c *C2Websockets) CheckForKillDate() {
