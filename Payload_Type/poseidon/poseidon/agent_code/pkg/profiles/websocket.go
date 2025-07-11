@@ -362,9 +362,6 @@ func (c *C2Websockets) GetSleepTime() int {
 	if c.ShouldStop {
 		return -1
 	}
-	if c.TaskingType == TaskingTypePush {
-		return 0
-	}
 	if c.Jitter > 0 {
 		jit := float64(rand.Int()%c.Jitter) / float64(100)
 		jitDiff := float64(c.Interval) * jit
